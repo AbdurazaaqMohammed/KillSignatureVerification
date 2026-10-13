@@ -1,0 +1,40 @@
+plugins {
+    id 'com.android.application'
+}
+
+android {
+    compileSdk 36
+    namespace 'com.example.killsig'
+    defaultConfig {
+        applicationId "com.example.killsig"
+        minSdk 21
+        targetSdk 37
+        versionCode 1
+        versionName "1.0"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_17
+        targetCompatibility JavaVersion.VERSION_17
+    }
+    buildFeatures {
+        aidl true
+    }
+}
+
+dependencies {
+    compileOnly project(':sdk')
+    compileOnly project(':apkkit')
+    compileOnly 'com.google.guava:guava:33.6.0-android'
+    compileOnly 'com.beust:jcommander:1.82'
+    compileOnly 'com.google.code.findbugs:jsr305:3.0.2'
+    compileOnly 'org.bouncycastle:bcprov-jdk18on:1.85.2'
+    compileOnly 'net.lingala.zip4j:zip4j:2.11.6'
+    compileOnly 'commons-io:commons-io:2.22.0'
+    compileOnly files('libs/antlr.jar')
+    compileOnly files('libs/JCommand.jar')
+}
